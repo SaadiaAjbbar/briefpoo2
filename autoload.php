@@ -3,7 +3,7 @@
 spl_autoload_register(function ($class) {
     $prefix = 'App\\';
     $baseDir = __DIR__ . '/app/';
-
+// CORE\ROUTER
     if (strncmp($prefix, $class, strlen($prefix)) !== 0) {
         return;
     }
