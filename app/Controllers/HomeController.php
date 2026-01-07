@@ -4,10 +4,12 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 
-class HomeController extends Controller{
-    public function index(){
+class HomeController extends Controller
+{
+    public function index()
+    {
         $this->view('home', [
-            'title' => 'Welcome projet poo'
+            'title' => 'page home'
         ]);
     }
 }

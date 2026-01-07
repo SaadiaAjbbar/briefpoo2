@@ -1,12 +1,15 @@
 <?php
-
-require_once __DIR__ . '/../bootstrap/autoload.php';
-
-
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
 
 session_start();
+require_once __DIR__ . '/../autoload.php';
 
-$router = new App\Core\Router();
-$router->get('/', "HomeController@index");
-$router->get("/books", "BookController@index");
-$router->dispatch(); 
+use App\Core\Router;
+
+$router = new Router();
+
+$router->get('/', 'HomeController@index');
+$router->get('/articles', 'ArticleController@show');
+
+$router->dispatch();
