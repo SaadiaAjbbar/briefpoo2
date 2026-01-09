@@ -14,9 +14,9 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
         <div class="flex items-center space-x-4 mb-10 overflow-x-auto pb-4 no-scrollbar">
-            <button class="bg-indigo-600 text-white px-6 py-2 rounded-full whitespace-nowrap">All Topics</button>
-            <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">Technology</button>
-            <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">Lifestyle</button>
+            <button class="bg-indigo-600 text-white px-6 py-2 rounded-full whitespace-nowrap">tous les categories</button>
+            <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">technologie</button>
+            <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">sport</button>
             <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">Education</button>
             <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">Business</button>
         </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-2 mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Technology</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">titre categorie</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight hover:text-indigo-600 cursor-pointer">
                         LE TITRE DARTICLE
@@ -56,7 +56,7 @@
                 </div>
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-2 mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Technology</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">titre categorie</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight hover:text-indigo-600 cursor-pointer">
                         LE TITRE DARTICLE
@@ -83,7 +83,7 @@
                 </div>
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-2 mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Technology</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">titre categorie</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight hover:text-indigo-600 cursor-pointer">
                         LE TITRE DARTICLE
@@ -110,7 +110,7 @@
                 </div>
                 <div class="p-6 flex-grow">
                     <div class="flex items-center space-x-2 mb-3">
-                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">Technology</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">titre categorie</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight hover:text-indigo-600 cursor-pointer">
                         LE TITRE DARTICLE

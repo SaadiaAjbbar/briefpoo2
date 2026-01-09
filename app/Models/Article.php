@@ -9,6 +9,7 @@ class Article
     private $id;
     private string $contenu;
     private string $titre;
+    private int $idAuthor;
     private DateTime $date_creation;
 
     public function __construct($id,$contenu,$titre,$date_creation)
@@ -20,7 +21,7 @@ class Article
 
     }
 /*****************************ID******************************** */
-    // Getter pour l'ID
+    
     public function getId() {
         return $this->id;
     }
@@ -29,7 +30,6 @@ class Article
         if (is_int($id) && $id > 0) {
             $this->id = $id;
         } else {
-            // Gérer l'erreur ou ignorer la modification
             echo "Erreur : ID invalide.";
         }
     }
@@ -42,7 +42,6 @@ class Article
         }
     }
 
-    // Getter : Permet de lire la valeur de le contenu
     public function getcontenu(): string {
         return $this->contenu;
     }
@@ -56,11 +55,21 @@ class Article
         }
     }
 
-    // Getter : Permet de lire la valeur de le titre
+    
     public function gettitre(): string {
         return $this->titre;
     }
-    
+    /*****************************idAuthor******************************** */
+   
+    public function setIdAuthor(int $idAuthor): void
+    {
+        $this->idAuthor = $idAuthor;
+    }
+
+    public function getIdAuthor(): int
+    {
+        return $this->idAuthor;
+    }
     /*****************************date_creation******************************** */
     public function setdate_creation(DateTime $nouveldate_creation): void {
         if ($nouveldate_creation != '' ) {
