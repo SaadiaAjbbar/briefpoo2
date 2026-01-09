@@ -1,8 +1,24 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $title ?? 'Blog System' ?></title>
-    <link href="/css/output.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogSystem | Explore Stories</title>
+    <link rel="stylesheet" href="/css/output.css">
 </head>
-<body class="bg-red-900 text-gray-800">
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-white border-b border-gray-200  top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600">BlogSystem</span>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 font-medium">Login</a>
+                    <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-medium hover:bg-indigo-700 transition shadow-sm">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
