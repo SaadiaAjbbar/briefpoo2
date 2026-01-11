@@ -4,17 +4,20 @@ namespace App\Core;
 
 use PDO;
 
-class Database {
+class Database
+{
+    private static ?PDO $instance = null;
 
-    private static $instance = null;
-
-    public static function getInstance() {
-
+    public static function getInstance(): PDO
+    {
         if (self::$instance === null) {
             self::$instance = new PDO(
-                "mysql:host=localhost;dbname=blog_system",
+                "mysql:host=localhost;dbname=blog_system;charset=utf8",
                 "root",
-                "Saadia@02"
+                "Saadia@02",
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                ]
             );
         }
 

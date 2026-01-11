@@ -16,8 +16,8 @@
                 </div>
                 
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="text-gray-600 hover:text-indigo-600 font-medium">Login</a>
-                    <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-medium hover:bg-indigo-700 transition shadow-sm">Register</a>
+                    <a href="/login" class="text-gray-600 hover:text-indigo-600 font-medium">Login</a>
+                    <a href="/register" class="bg-indigo-600 text-white px-5 py-2 rounded-full font-medium hover:bg-indigo-700 transition shadow-sm">Register</a>
                 </div>
             </div>
         </div>
