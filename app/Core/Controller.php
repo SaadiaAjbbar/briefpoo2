@@ -7,13 +7,9 @@ class Controller
     protected function view(string $view, array $data = [])
     {
         extract($data);
-        $viewFile = __DIR__ . '/../Views/pages/' . $view . '.php';
-        $layoutFile = __DIR__ . '/../Views/layouts/main.php';
 
-        if (!file_exists($viewFile)) {
-            throw new \Exception("View $view not found");
-        }
-
-        require $layoutFile;
+        require __DIR__ . '/../../views/partials/header.php';
+        require __DIR__ . '/../../views/' . $view . '.php';
+        require __DIR__ . '/../../views/partials/footer.php';
     }
 }

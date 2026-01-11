@@ -1,14 +1,18 @@
 <?php
 
 spl_autoload_register(function ($class) {
+
     $prefix = 'App\\';
     $baseDir = __DIR__ . '/app/';
-// CORE\ROUTER
+
     if (strncmp($prefix, $class, strlen($prefix)) !== 0) {
         return;
     }
 
+    // App\Controllers\HomeController
     $relativeClass = substr($class, strlen($prefix));
+
+    // Controllers/HomeController.php
     $file = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
 
     if (file_exists($file)) {
