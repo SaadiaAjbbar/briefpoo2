@@ -19,22 +19,28 @@ class AuthController extends Controller
     }
 
     public function register()
-    {
-        $db = Database::getInstance();
+{
+    $db = Database::getInstance();
 
-        $nom = $_POST['nom'];
-        $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $nom = $_POST['nom'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $role = $_POST['role'];
 
-        $sql = "INSERT INTO users (nom, email, mot_passe, role)
-                VALUES (?, ?, ?, 'reader')";
-
-        $stmt = $db->prepare($sql);
-        $stmt->execute([$nom, $email, $password]);
-
-        header('Location: /login');
-        exit;
+    if (!in_array($role, ['reader', 'author'])) {
+        $role = 'reader';
     }
+
+    $sql = "INSERT INTO users (nom, email, mot_passe, role)
+            VALUES (?, ?, ?, ?)";
+
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$nom, $email, $password, $role]);
+
+    header('Location: /login');
+    exit;
+}
+
 
     public function login()
     {
@@ -50,10 +56,10 @@ class AuthController extends Controller
 
         if ($user && password_verify($password, $user['mot_passe'])) {
             $_SESSION['user'] = $user;
-            header('Location: /login');
+            header('Location: /');
             exit;
         }
 
-        header('Location: /');
+        header('Location: /login');
     }
 }

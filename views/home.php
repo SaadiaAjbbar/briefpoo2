@@ -13,19 +13,14 @@
 
     <div class="flex items-center space-x-4 mb-10 overflow-x-auto pb-4 no-scrollbar">
         <button class="bg-indigo-600 text-white px-6 py-2 rounded-full whitespace-nowrap">tous les categories</button>
-        <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">technologie</button>
-        <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">sport</button>
-        <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">Education</button>
-        <button class="bg-white border border-gray-200 text-gray-600 hover:border-indigo-500 px-6 py-2 rounded-full whitespace-nowrap transition">Business</button>
-    </div>
+        </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <?php foreach ($articles as $article): ?>
             <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col">
 
-                <div class="h-48 bg-indigo-100 flex items-center justify-center">
-                    <span class="text-indigo-300 text-lg">Image</span>
+                <div class="h-16 bg-indigo-100 flex items-center justify-center">
                 </div>
 
                 <div class="p-6 flex-grow">
@@ -49,7 +44,7 @@
 
                 <div class="p-6 pt-0 border-t border-gray-50 mt-auto">
                     <p class="text-xs text-gray-500">
-                        Publié le <?= htmlspecialchars($article['date_creation']) ?>
+                        Publie le <?= htmlspecialchars($article['date_creation']) ?>
                     </p>
                 </div>
 

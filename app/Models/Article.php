@@ -20,7 +20,6 @@ class Article
         $this->date_creation = $date_creation;
 
     }
-/*****************************ID******************************** */
     
     public function getId() {
         return $this->id;
@@ -33,7 +32,6 @@ class Article
             echo "Erreur : ID invalide.";
         }
     }
-/*****************************contenu******************************** */
     public function setcontenu(string $nouvelcontenu): void {
         if ($nouvelcontenu != '' ) {
             $this->contenu = $nouvelcontenu; 
@@ -46,7 +44,6 @@ class Article
         return $this->contenu;
     }
 
-/*****************************TITRE******************************** */
     public function settitre(string $nouveltitre): void {
         if ($nouveltitre != '' ) {
             $this->titre = $nouveltitre; 
@@ -59,7 +56,6 @@ class Article
     public function gettitre(): string {
         return $this->titre;
     }
-    /*****************************idAuthor******************************** */
    
     public function setIdAuthor(int $idAuthor): void
     {
@@ -70,7 +66,6 @@ class Article
     {
         return $this->idAuthor;
     }
-    /*****************************date_creation******************************** */
     public function setdate_creation(DateTime $nouveldate_creation): void {
         if ($nouveldate_creation != '' ) {
             $this->date_creation = $nouveldate_creation; 
@@ -79,7 +74,6 @@ class Article
         }
     }
 
-    // Getter : Permet de lire la valeur de le date_creation
     public function getdate_creation(): DateTime {
         return $this->date_creation;
     }

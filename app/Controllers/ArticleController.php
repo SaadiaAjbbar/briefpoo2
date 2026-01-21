@@ -12,7 +12,7 @@ class ArticleController extends Controller
     {
         $db = Database::getInstance();
 
-        $sql = "
+        $sql = "        
             SELECT 
                 a.id AS article_id,
                 a.titre AS article_titre,
