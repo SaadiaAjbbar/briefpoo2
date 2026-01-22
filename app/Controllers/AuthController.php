@@ -10,56 +10,85 @@ class AuthController extends Controller
 {
     public function loginForm()
     {
-        $this->view("/auth/login");
+        $this->view('/auth/login');
     }
 
     public function registerForm()
     {
-        $this->view("/auth/register");
+        $this->view('/auth/register');
     }
 
     public function register()
-{
-    $db = Database::getInstance();
+    {
+        $db = Database::getInstance();
 
-    $nom = $_POST['nom'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $role = $_POST['role'];
+        $nom = trim($_POST['nom']);
+        $email = trim($_POST['email']);
+        $password = $_POST['password'];
+        $role = $_POST['role'] ?? 'reader';
 
-    if (!in_array($role, ['reader', 'author'])) {
-        $role = 'reader';
+        if (!in_array($role, ['reader', 'author'])) {
+            $role = 'reader';
+        }
+
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO users (nom, email, mot_passe, role)
+                VALUES (?, ?, ?, ?)";
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute([$nom, $email, $hashedPassword, $role]);
+
+        header('Location: /login');
+        exit;
     }
 
-    $sql = "INSERT INTO users (nom, email, mot_passe, role)
-            VALUES (?, ?, ?, ?)";
+   public function login()
+{
 
+    $db = Database::getInstance();
+
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    if (empty($email) || empty($password)) {
+        header('Location: /login');
+        exit;
+    }
+
+    $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $db->prepare($sql);
-    $stmt->execute([$nom, $email, $password, $role]);
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
 
-    header('Location: /login');
+    if (!$user || !password_verify($password, $user['mot_passe'])) {
+        echo "password incorrect";
+        header('Location: /login');
+        exit;
+    }
+
+    session_regenerate_id(true);
+    $_SESSION['user'] = $user;
+
+    switch ($user['role']) {
+        case 'admin':
+            header('Location: /admin');
+            break;
+        case 'author':
+            header('Location: /author');
+            break;
+        default:
+            header('Location: /');
+    }
     exit;
 }
 
 
-    public function login()
+    public function logout()
     {
-        $db = Database::getInstance();
-
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $sql = "SELECT * FROM users WHERE email = ?";
-        $stmt = $db->prepare($sql);
-        $stmt->execute([$email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user && password_verify($password, $user['mot_passe'])) {
-            $_SESSION['user'] = $user;
-            header('Location: /');
-            exit;
-        }
-
+        session_destroy();
         header('Location: /login');
+        exit;
     }
 }
